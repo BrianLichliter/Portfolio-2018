@@ -23,12 +23,14 @@ class Content extends React.Component {
         this.state = {
             selectedPost: {name: "EcoCRED", color: "green"},
             postList: [
-                {name: "EcoCRED",
+                {name: "Blog One",
                 color: "green"},
-                {name: "Parts Source",
+                {name: "Blog Two",
                 color: "teal"},
-                {name: "CME",
-                color: "blue"}
+                {name: "Blog Three",
+                color: "blue"},
+                {name: "Blog Four",
+                color: "black"}
             ]
         }
         this.changeSelectedPost = this.changeSelectedPost.bind(this);
@@ -43,11 +45,11 @@ class Content extends React.Component {
             <div className="content">
                 <Grid container spacing={0}>
                     <Hidden xsDown>
-                        <Grid item xs={3}>
+                        <Grid item md={2} xs={3}>
                             <SideNav selectedPost={this.state.selectedPost} changeSelectedPost={this.changeSelectedPost} postList={this.state.postList}/>
                         </Grid>
                     </Hidden>
-                    <Grid item sm={9} xs={12}>
+                    <Grid item md={10} sm={9} xs={12}>
                         <Post selectedPost={this.state.selectedPost} />
                     </Grid>
                 </Grid>

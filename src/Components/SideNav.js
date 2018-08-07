@@ -16,8 +16,8 @@ class SideNav extends React.Component {
             <div>
                 { this.props.postList.map(post => (<MenuItem 
                                                         key={post.name} 
-                                                        selected={this.props.selectedPost === post.name} 
-                                                        onClick={this.handleClick.bind(this, post.name)}
+                                                        selected={this.props.selectedPost.name === post.name} 
+                                                        onClick={this.handleClick.bind(this, post)}
                                                     >
                                                         {post.name}
                                                     </MenuItem>))

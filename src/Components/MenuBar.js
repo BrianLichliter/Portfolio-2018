@@ -12,9 +12,8 @@ const styles = {
 };
 
 function MenuBar(props) {
-  const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="title" color="inherit">

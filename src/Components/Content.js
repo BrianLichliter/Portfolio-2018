@@ -21,15 +21,21 @@ class Content extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedPost: {name: "EcoCRED", color: "green"},
+            selectedPost: {name: "EcoCRED", 
+                            color: "green", 
+                            image: "https://firebasestorage.googleapis.com/v0/b/pmannuel-com.appspot.com/o/Fotor_153108381430744.jpg?alt=media&token=ebd0152c-1101-45a7-91d5-673066b50476",
+                            article: "# Mobilizing Employees to Create Greener Companies"
+                        },
             postList: [
-                {name: "Blog One",
-                color: "green"},
-                {name: "Blog Two",
+                {name: "EcoCRED",
+                color: "green",
+                image: "https://firebasestorage.googleapis.com/v0/b/pmannuel-com.appspot.com/o/Fotor_153108381430744.jpg?alt=media&token=ebd0152c-1101-45a7-91d5-673066b50476",
+                article: "# Mobilizing Employees to Create Greener Companies"},
+                {name: "Parts Source",
                 color: "teal"},
-                {name: "Blog Three",
+                {name: "Bosch",
                 color: "blue"},
-                {name: "Blog Four",
+                {name: "CME",
                 color: "black"}
             ]
         }
@@ -45,11 +51,11 @@ class Content extends React.Component {
             <div className="content">
                 <Grid container spacing={0}>
                     <Hidden xsDown>
-                        <Grid item md={2} xs={3}>
+                        <Grid item md={3} xs={3}>
                             <SideNav selectedPost={this.state.selectedPost} changeSelectedPost={this.changeSelectedPost} postList={this.state.postList}/>
                         </Grid>
                     </Hidden>
-                    <Grid item md={10} sm={9} xs={12}>
+                    <Grid item md={9} sm={9} xs={12}>
                         <Post selectedPost={this.state.selectedPost} />
                     </Grid>
                 </Grid>

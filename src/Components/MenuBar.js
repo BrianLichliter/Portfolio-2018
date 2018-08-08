@@ -11,7 +11,7 @@ const styles = {
   },
 };
 
-function MenuBar(props) {
+function MenuBar() {
   return (
     <div>
       <AppBar color="primary" position="sticky">

@@ -15,11 +15,11 @@ class SideNav extends React.Component {
         return (
             <div>
                 { this.props.postList.map(post => (<MenuItem 
-                                                        key={post.name} 
-                                                        selected={this.props.selectedPost.name === post.name} 
+                                                        key={post.client} 
+                                                        selected={this.props.selectedPost.client === post.client} 
                                                         onClick={this.handleClick.bind(this, post)}
                                                     >
-                                                        {post.name}
+                                                        {post.client}
                                                     </MenuItem>))
                 }
             </div>

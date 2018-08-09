@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 class Post extends React.Component {
     render() {        
         return ( 
-        <div className="Post" style={{overflowY: "scroll", overflowX: "hidden", maxHeight: "calc(100vh - 64px)", zIndex: -1}}>
+        <div className="Post" style={{overflowY: "scroll", overflowX: "hidden", maxHeight: "calc(100vh - 48px)", zIndex: -1}}>
             <div style={{minHeight: 400, height: "65vh", backgroundColor: this.props.selectedPost.color, color: "white"}}>
                 <Grid container spacing={0} justify="center" alignItems="center" style={{height: "100%"}}>
                     <img alt={this.props.selectedPost.image} style={{maxWidth: "90%", maxHeight: "55vh", borderRadius: 5, boxShadow: "rgba(0,0,0,.2) -5px 5px 50px 4px"}} src={this.props.selectedPost.imageURL}/>

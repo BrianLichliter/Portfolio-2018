@@ -1,22 +1,9 @@
 import React from 'react';
 import Post from './Post';
 import SideNav from './SideNav';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
-import withWidth from '@material-ui/core/withWidth';
-import compose from 'recompose/compose';
 import firebase from '../firebase/firebase.js';
-
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    container: {
-        display: 'flex',
-    },
-});
 
 class Content extends React.Component {
     constructor(props) {
@@ -32,11 +19,14 @@ class Content extends React.Component {
         this.changeSelectedPost = this.changeSelectedPost.bind(this);
     }
     
+    // function for allowing menubar to change the selected post
     changeSelectedPost(post) {
         this.setState({selectedPost: post})
     }
 
-    getTextFromUrl(url, query) {
+    // helper function to get an article's content from an article url
+    // returns a promise
+    getArticleFromArticleUrl(url, query) {
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
@@ -56,12 +46,13 @@ class Content extends React.Component {
         })
     }
 
+    // loads the data from firebase
     componentDidMount() {
         const projectsRef = firebase.firestore().collection('projects');
         projectsRef.get().then((querySnapshot) => {
             let reads = []
             querySnapshot.forEach((query) => {
-                reads.push(this.getTextFromUrl(query.data().articleURL, query))
+                reads.push(this.getArticleFromArticleUrl(query.data().articleURL, query))
             })
             Promise.all(reads).then((projects) => {
                 this.setState({
@@ -90,12 +81,4 @@ class Content extends React.Component {
     }
 }
 
-Content.propTypes = {
-    classes: PropTypes.object.isRequired,
-    width: PropTypes.string.isRequired,
-};
-  
-export default compose(
-    withStyles(styles),
-    withWidth(),
-)(Content);
+export default Content

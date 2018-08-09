@@ -36,16 +36,38 @@ class Content extends React.Component {
         this.setState({selectedPost: post})
     }
 
+    getTextFromUrl(url, query) {
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = (event) => {
+                const reader = new FileReader();
+                // This fires after the blob has been read/loaded.
+                reader.addEventListener('loadend', (e) => {
+                    var project = query.data();
+                    project.article = e.srcElement.result;
+                    resolve(project);        
+                });
+                // Start reading the blob as text.
+                reader.readAsText(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        })
+    }
+
     componentDidMount() {
         const projectsRef = firebase.firestore().collection('projects');
         projectsRef.get().then((querySnapshot) => {
-            let projects = []
+            let reads = []
             querySnapshot.forEach((query) => {
-                projects.push(query.data())
+                reads.push(this.getTextFromUrl(query.data().articleURL, query))
             })
-            this.setState({
-                postList: projects,
-                selectedPost: projects[0]
+            Promise.all(reads).then((projects) => {
+                this.setState({
+                    postList: projects,
+                    selectedPost: projects[0]
+                })
             })
         })
     }
@@ -69,8 +91,8 @@ class Content extends React.Component {
 }
 
 Content.propTypes = {
-classes: PropTypes.object.isRequired,
-width: PropTypes.string.isRequired,
+    classes: PropTypes.object.isRequired,
+    width: PropTypes.string.isRequired,
 };
   
 export default compose(

@@ -14,8 +14,8 @@ const styles = {
 function MenuBar() {
   return (
     <div>
-      <AppBar color="primary" position="sticky">
-        <Toolbar>
+      <AppBar color="default" position="sticky">
+        <Toolbar variant="dense">
           <Typography variant="title" color="inherit">
             Brian Lichliter
           </Typography>

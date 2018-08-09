@@ -14,13 +14,16 @@ class SideNav extends React.Component {
     render() {
         return (
             <div>
-                { this.props.postList.map(post => (<MenuItem 
-                                                        key={post.client} 
-                                                        selected={this.props.selectedPost.client === post.client} 
-                                                        onClick={this.handleClick.bind(this, post)}
-                                                    >
-                                                        {post.client}
-                                                    </MenuItem>))
+                { this.props.postList.map(
+                    post => (
+                        <MenuItem 
+                            key={post.client} 
+                            selected={this.props.selectedPost.client === post.client} 
+                            onClick={this.handleClick.bind(this, post)}
+                        >
+                            {post.client}
+                        </MenuItem>)
+                    )
                 }
             </div>
         )

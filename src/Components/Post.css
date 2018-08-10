@@ -1,0 +1,13 @@
+.Post {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 48px);
+    z-index: -1;
+}
+
+@media screen and (max-width: 599px) {
+    .Post {
+        overflow: inherit;
+    }
+}
+

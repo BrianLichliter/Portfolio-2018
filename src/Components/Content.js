@@ -3,6 +3,7 @@ import Post from './Post';
 import SideNav from './SideNav';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
+import FloatingActionButton from './FloatingActionButton';
 import firebase from '../firebase/firebase.js';
 
 class Content extends React.Component {
@@ -76,6 +77,9 @@ class Content extends React.Component {
                         <Post selectedPost={this.state.selectedPost} />
                     </Grid>
                 </Grid>
+                <Hidden smUp>
+                    <FloatingActionButton />
+                </Hidden>
             </div>
         )
     }

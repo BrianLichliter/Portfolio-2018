@@ -3,8 +3,8 @@ import Post from './Post';
 import SideNav from './SideNav';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
-import FloatingActionButton from './FloatingActionButton';
 import firebase from '../firebase/firebase.js';
+import TemporaryDrawer from './TemporaryDrawer';
 
 class Content extends React.Component {
     constructor(props) {
@@ -78,7 +78,7 @@ class Content extends React.Component {
                     </Grid>
                 </Grid>
                 <Hidden smUp>
-                    <FloatingActionButton />
+                    <TemporaryDrawer selectedPost={this.state.selectedPost} changeSelectedPost={this.changeSelectedPost} postList={this.state.postList}/>
                 </Hidden>
             </div>
         )

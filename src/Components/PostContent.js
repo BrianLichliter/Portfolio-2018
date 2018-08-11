@@ -8,13 +8,13 @@ class PostContent extends React.Component {
     render() {
         return(
             <div className="PostContent" style={{backgroundColor: "rgb(248,248,248)", color: "black", fontSize: 24, minHeight: "65vh"}}>
-                <Grid container justify="center" spacing={24}>
+                <Grid container justify="center">
                     <Grid item sm={12} md={11} lg={10} xl={8} style={{padding: "0px 32px"}}>  
                         <ReactMarkdown escapeHtml={false} source={this.props.selectedPost.article} />
                     </Grid>
                 </Grid>
                 <Hidden smUp>
-                    <div style={{height: 50}}></div>
+                    <div style={{height: 60}}></div>
                 </Hidden>
             </div>
         )

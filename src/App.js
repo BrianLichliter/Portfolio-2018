@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MenuBar from './Components/MenuBar';
-import Content from './Components/Content';
+import MenuBar from './components/MenuBar';
+import Content from './containers/Content';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({

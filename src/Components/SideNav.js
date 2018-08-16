@@ -7,21 +7,21 @@ class SideNav extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(post) {
-        this.props.changeSelectedPost(post);
+    handleClick(project) {
+        this.props.changeSelectedProject(project);
     }
 
     render() {
         return (
             <div>
-                { this.props.postList.map(
-                    post => (
+                { this.props.projectList.map(
+                    project => (
                         <MenuItem 
-                            key={post.client} 
-                            selected={this.props.selectedPost.client === post.client} 
-                            onClick={this.handleClick.bind(this, post)}
+                            key={project.client} 
+                            selected={this.props.selectedProject.client === project.client} 
+                            onClick={this.handleClick.bind(this, project)}
                         >
-                            {post.client}
+                            {project.client}
                         </MenuItem>)
                     )
                 }

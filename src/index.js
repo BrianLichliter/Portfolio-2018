@@ -8,7 +8,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 
-import rootReducer from "./store/redux";
+import rootReducer from "./store";
 import { watcherSaga } from "./store/sagas";
 
 // create the saga middleware

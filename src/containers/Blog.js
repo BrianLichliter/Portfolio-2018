@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { connect } from "react-redux";
 
 import Post from '../components/Post';
@@ -23,6 +22,15 @@ class Content extends React.Component {
 
     render() { 
         const { projects, selectedProject } = this.props
+
+        const fullList = (
+            projects.map(project => {
+                return (
+                    <Post selectedProject={project} display={(selectedProject.client === project.client) ? "block" : "none"}/>
+                )        
+            })
+        );
+
         return (
             <div className="content">
                 <Grid container spacing={0}>
@@ -32,7 +40,8 @@ class Content extends React.Component {
                         </Grid>
                     </Hidden>
                     <Grid item md={10} sm={9} xs={12}>
-                        <Post selectedPost={selectedProject} />
+                        {/* <Post selectedProject={selectedProject} /> */}
+                        {fullList}
                     </Grid>
                 </Grid>
                 <Hidden smUp>

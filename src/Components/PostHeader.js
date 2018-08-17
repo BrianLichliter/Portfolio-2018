@@ -4,9 +4,9 @@ import Grid from '@material-ui/core/Grid';
 class PostHeader extends React.Component {
     render() {
         return (
-            <div style={{minHeight: 400, height: "65vh", maxHeight: 600, backgroundColor: this.props.selectedPost.color, color: "white"}}>
+            <div style={{minHeight: 400, height: "65vh", maxHeight: 600, backgroundColor: this.props.selectedProject.color, color: "white"}}>
                 <Grid container spacing={0} justify="center" alignItems="center" style={{height: "calc(100% - 10px)"}}>
-                    <img alt={this.props.selectedPost.image} style={{maxWidth: "90%", maxHeight: "90%", boxShadow: "rgba(0,0,0,.2) -5px 5px 50px 4px"}} src={this.props.selectedPost.imageURL}/>
+                    <img alt={this.props.selectedProject.image} style={{maxWidth: "90%", maxHeight: "90%", boxShadow: "rgba(0,0,0,.2) -5px 5px 50px 4px"}} src={this.props.selectedProject.imageURL}/>
                 </Grid>
             </div>
         )

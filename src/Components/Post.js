@@ -7,9 +7,9 @@ import './Post.css';
 class Post extends React.Component {
     render() {        
         return ( 
-            <div className="Post">
-                <PostHeader selectedPost={this.props.selectedPost}/>
-                <PostContent selectedPost={this.props.selectedPost}/>
+            <div className="Post" style={{display: this.props.display}}>
+                <PostHeader selectedProject={this.props.selectedProject}/>
+                <PostContent selectedProject={this.props.selectedProject}/>
             </div> 
         )
     }

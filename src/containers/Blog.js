@@ -40,7 +40,6 @@ class Content extends React.Component {
                         </Grid>
                     </Hidden>
                     <Grid item md={10} sm={9} xs={12}>
-                        {/* <Post selectedProject={selectedProject} /> */}
                         {fullList}
                     </Grid>
                 </Grid>

@@ -1,5 +1,5 @@
 import { takeLatest, call, put, all } from "redux-saga/effects";
-import firebase from '../firebase/firebase.js';
+import firebase from '../firebase/firebase';
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {

@@ -20,7 +20,6 @@ function fetchArticle(query) {
     console.log(query)
     return new Promise((resolve, reject) => {
         const url = query.data().articleURL;
-        console.log("getting article")
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
         xhr.onload = (event) => {
@@ -29,7 +28,6 @@ function fetchArticle(query) {
             reader.addEventListener('loadend', (e) => {
                 var project = query.data();
                 project.article = e.srcElement.result;
-                console.log(project);
                 resolve(project);        
             });
             // Start reading the blob as text.
@@ -43,7 +41,6 @@ function fetchArticle(query) {
 // worker saga: makes the api call when watcher saga sees the action
 function* loadProjectsSaga() {
   try {
-    console.log("running workerSaga")
     const querySnapshot = yield call(fetchProjects);
     const projects = yield all(
         querySnapshot.docs.map(
@@ -51,8 +48,8 @@ function* loadProjectsSaga() {
         )
     )
     const selectedProject = projects[0]
-    yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
-  } catch (error) {
-    yield put({ type: "LOAD_PROJECTS_FAILURE", error });
-  }
+        yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
+    } catch (error) {
+        yield put({ type: "LOAD_PROJECTS_FAILURE", error });
+    }
 }

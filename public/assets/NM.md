@@ -1,3 +1,4 @@
+##### Northwestern Memorial Hospital
 # Workflow Efficiency
 
 As part of the Design Strategy class, a staple of the Engineering Design and Innovation curriculum, our studio partnered up with the Dr. Lyle Berkowitz and the Northwestern Memorial Hospital system in order to address the areas of healthcare that need the most attention going forward. My design team was directed to focus on the workflow efficiency of a primary care team while others in the class were focusing on virtual care’s role in healthcare in the coming future.

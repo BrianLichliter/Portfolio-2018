@@ -2,7 +2,6 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Grid from '@material-ui/core/Grid';
 import './PostContent.css';
-import Hidden from '@material-ui/core/Hidden';
 
 class PostContent extends React.Component {
     render() {
@@ -13,9 +12,7 @@ class PostContent extends React.Component {
                         <ReactMarkdown escapeHtml={false} source={this.props.selectedProject.article} />
                     </Grid>
                 </Grid>
-                <Hidden smUp>
-                    <div style={{height: 60}}></div>
-                </Hidden>
+                <div style={{height: 60}}></div>
             </div>
         )
     }

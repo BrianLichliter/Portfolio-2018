@@ -29,8 +29,8 @@ class TemporaryDrawer extends React.Component {
     });
   };
 
-  handleClick(post) {
-    this.props.changeSelectedPost(post);
+  handleClick(project) {
+    this.props.changeSelectedProject(project);
 }
 
   render() {
@@ -38,14 +38,14 @@ class TemporaryDrawer extends React.Component {
 
     const fullList = (
         <div className={classes.fullList}>
-        {this.props.postList.map(post => {
+        {this.props.projectList.map(project => {
             return (
                 <MenuItem 
-                key={post.client} 
-                selected={this.props.selectedPost.client === post.client} 
-                onClick={this.handleClick.bind(this, post)}
+                key={project.client} 
+                selected={this.props.selectedProject.client === project.client} 
+                onClick={this.handleClick.bind(this, project)}
                 >
-                    {post.client}
+                    {project.client}
                 </MenuItem>
             )        
         })}
@@ -54,8 +54,9 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.toggleDrawer('bottom', true)} style={{position: "fixed", right: 16, bottom: 16}} variant="fab" color="primary" aria-label="Add" className={classes.button}>
+        <Button onClick={this.toggleDrawer('bottom', true)} style={{position: "fixed", right: 16, bottom: 16}} variant="extendedFab" color="secondary" size="large" npmaria-label="Add" className={classes.button}>
             <ListIcon />
+            &nbsp; Projects
         </Button>
         <Drawer
           anchor="bottom"

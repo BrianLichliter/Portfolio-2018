@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MenuBar from './Components/MenuBar';
-import Content from './Components/Content';
+import MenuBar from './components/MenuBar';
+import Blog from './containers/Blog';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -17,7 +17,7 @@ class App extends Component {
       <div className="app">
         <MuiThemeProvider theme={theme}>
           <MenuBar />
-          <Content />
+          <Blog />
         </MuiThemeProvider>
       </div>
     );

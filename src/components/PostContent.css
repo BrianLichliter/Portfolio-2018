@@ -3,6 +3,7 @@
     max-height: 450px;
     margin: 0 auto;
     display: block;
+    box-shadow: rgba(0,0,0,.1) -5px 5px 25px 4px;
 }
 
 .PostContent {

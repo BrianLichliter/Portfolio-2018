@@ -1,5 +1,6 @@
 import React from "react";
 import MenuItem from '@material-ui/core/MenuItem';
+import Paper from '@material-ui/core/Paper';
 
 class SideNav extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class SideNav extends React.Component {
 
     render() {
         return (
-            <div>
+            <Paper elevation={5} square={true} style={{height: "100%"}}>
                 { this.props.projectList.map(
                     project => (
                         <MenuItem 
@@ -25,7 +26,7 @@ class SideNav extends React.Component {
                         </MenuItem>)
                     )
                 }
-            </div>
+            </Paper>
         )
     }
 }

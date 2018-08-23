@@ -35,7 +35,7 @@ class Content extends React.Component {
             <div className="content">
                 <Grid container spacing={0}>
                     <Hidden xsDown>
-                        <Grid item md={2} xs={3}>
+                        <Grid style={{zIndex:10}} item md={2} xs={3}>
                             <SideNav selectedProject={selectedProject} changeSelectedProject={this.dispatchChangeSelectedProject} projectList={projects}/>
                         </Grid>
                     </Hidden>

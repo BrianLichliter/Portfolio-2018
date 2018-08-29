@@ -60,7 +60,7 @@ class Homepage extends React.Component {
                             Hello.
                         </Hello>
                         <BioParagraph>
-                            My name is Brian Lichliter and I am an experience designer currently working at <a rel="noopener noreferrer" target="_blank" style={{"textDecoration": "none", "color": "#f50057"}} href="http://www.drawn.com">Drawn</a>, a strategy and design firm, previously interned at Visa and Motorola.
+                            My name is Brian Lichliter and I am an experience designer currently working at <a rel="noopener noreferrer" target="_blank" style={{"textDecoration": "none", "color": "#f50057"}} href="http://www.drawn.com">Drawn</a>, a strategy and design firm. Previous intern at Visa and Motorola.
                         </BioParagraph>
                         <BioParagraph>
                             I have a passion for bringing user needs to the forefront of any and every endeavor. Having worked at various levels of abstraction in computing, technology, and design, I enjoy tackling problems both board and narrow in scope.

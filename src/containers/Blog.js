@@ -8,7 +8,7 @@ import TemporaryDrawer from '../components/TemporaryDrawer';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
-class Content extends React.Component {
+class Blog extends React.Component {
     constructor(props) {
         super(props)
         this.props.loadProjects()
@@ -32,18 +32,18 @@ class Content extends React.Component {
         );
 
         return (
-            <div className="content">
+            <div className="blog">
                 <Grid container spacing={0}>
-                    <Hidden xsDown>
-                        <Grid style={{zIndex:10}} item md={2} xs={3}>
+                    <Hidden smDown>
+                        <Grid style={{zIndex:10}} item md={2}>
                             <SideNav selectedProject={selectedProject} changeSelectedProject={this.dispatchChangeSelectedProject} projectList={projects}/>
                         </Grid>
                     </Hidden>
-                    <Grid item md={10} sm={9} xs={12}>
+                    <Grid item md={10} sm={12}>
                         {fullList}
                     </Grid>
                 </Grid>
-                <Hidden smUp>
+                <Hidden mdUp>
                     <TemporaryDrawer selectedProject={selectedProject} changeSelectedProject={this.dispatchChangeSelectedProject} projectList={projects}/>
                 </Hidden>
             </div>
@@ -67,4 +67,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Content);
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);

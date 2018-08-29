@@ -11,4 +11,4 @@ All of this culminated in our final pitch to the advisory board of the NUvention
 
 ![Deployed view of Tellascope](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/Tellascope%2FTellascope-4.png?alt=media&token=8c9b7817-f945-4712-a871-9569ff54e1e1npm)
 
-Check out our final pitch here! Our final deliverables including our interviews, business model canvas, mid-point and final product videos, and presentation decks can be found here. Paper prototypes can be found at [https://invis.io/3F5PNHENX](https://invis.io/3F5PNHENX) and the github can be found at [https://github.com/nuvention-web/Tellascope](https://github.com/nuvention-web/Tellascope).
+Check out our final pitch here! Our final deliverables including our interviews, business model canvas, mid-point and final product videos, and presentation decks can be found here. The github can be found at [https://github.com/nuvention-web/Tellascope](https://github.com/nuvention-web/Tellascope).

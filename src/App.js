@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import MenuBar from './components/MenuBar';
 import Blog from './containers/Blog';
+import Homepage from './components/Homepage';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -14,12 +17,15 @@ const theme = createMuiTheme({
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <MuiThemeProvider theme={theme}>
-          <MenuBar />
-          <Blog />
-        </MuiThemeProvider>
-      </div>
+      <Router>
+        <div className="app">
+          <MuiThemeProvider theme={theme}>
+            <MenuBar />
+            <Route exact path="/" component={Homepage} />
+            <Route path="/projects" component={Blog} />
+          </MuiThemeProvider>
+        </div>
+      </Router>
     );
   }
 }

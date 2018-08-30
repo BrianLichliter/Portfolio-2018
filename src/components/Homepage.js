@@ -4,11 +4,11 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
 
-const textColor = "rgb(34,36,38)";
+const textColor = "black";
 const fontFamily = "roboto";
 
 const AppWrapper = styled.div`
-    background-color: #FFFFFF;
+    background-color: rgb(248, 248, 248);
     object-fit: cover;
     min-height: calc(100vh - 48px);
     max-width: 100vw;
@@ -20,16 +20,16 @@ const TextWrapper = styled(Grid)`
 
 const Hello = styled.h1`
     color: ${textColor};
-    font-size: 72px;
+    font-size: 48px;
     margin: 0px;
     font-family: ${fontFamily};
 `
 
 const BioParagraph = styled.p`
     color: ${textColor};
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 1.5;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.825;
     font-family: ${fontFamily};
 `
 

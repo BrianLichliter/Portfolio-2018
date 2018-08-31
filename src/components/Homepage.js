@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { Link } from "react-router-dom";
 
-const textColor = "rgb(62,64,66)";
+const textColor = "black";
 const fontFamily = "roboto";
-const backgroundColor = "white"
+const backgroundColor = "rgb(248,248,248)"
 
 const AppWrapper = styled.div`
     background-color: ${backgroundColor};
@@ -16,7 +16,7 @@ const AppWrapper = styled.div`
 `
 
 const TextWrapper = styled(Grid)`
-    padding: 32px;
+    padding: 16px;
 `
 
 const Hello = styled.h1`

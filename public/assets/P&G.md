@@ -11,6 +11,6 @@ During the spring of 2015, our studio partnered up with various stakeholders wit
 
 Once we understood the market, we then researched our target consumers and stakeholders to begin gathering requirements and understand key insights and themes in the research. Using this research, we brainstormed a variety of solutions ranging the gamut of small to big to simple to crazy. Following the brainstorm we progressed forward using the mantra build, measure, learn to understand the benefits and painpoints with our ideas and to continue iterating throughout the process.
 
-![Testing the experience of one of our service ideas with a potential user](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/P%26G%2FP%26G-3.png?alt=media&token=55797879-0332-484e-ae11-a4cb7d42665e)
+![Testing the experience of one of our service ideas with a potential user](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/P%26G%2Fp%26g2.png?alt=media&token=aa21eef9-91b6-46bb-b207-a2e7f921e877)
 
 All of this culminated in a final presentation in front of a variety of senior stakeholders in P&G. Following presentations from the entire studio our work was compared to that of top design firms P&G has worked with and next steps were formulated with the internal teams for each project.

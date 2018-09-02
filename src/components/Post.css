@@ -1,7 +1,0 @@
-.Post {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    max-height: calc(100vh - 48px);
-    z-index: -1;
-}
-

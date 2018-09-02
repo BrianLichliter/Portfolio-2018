@@ -12,6 +12,12 @@ const Header = styled.div`
     @media screen and (max-width: 400px) {
         max-height: 35vh;
     }
+
+    img {
+        max-width: 90%;
+        max-height: 90%;
+
+    }
 `
 
 class PostHeader extends React.Component {
@@ -19,7 +25,7 @@ class PostHeader extends React.Component {
         return (
             <Header color={this.props.selectedProject.color}>
                 <Grid container spacing={0} justify="center" alignItems="center" style={{height: "calc(100% - 10px)"}}>
-                    <img alt={this.props.selectedProject.image} style={{maxWidth: "90%", maxHeight: "90%", boxShadow: "rgba(0,0,0,.2) -5px 5px 50px 4px"}} src={this.props.selectedProject.imageURL}/>
+                    <img alt={this.props.selectedProject.image} src={this.props.selectedProject.imageURL}/>
                 </Grid>
             </Header>
         )

@@ -46,7 +46,6 @@ const StyledReactMarkdown = styled(ReactMarkdown)`
 
 class PostContent extends React.Component {
     render() {
-        console.log(this.props.selectedProject)
         return(
             <div className="PostContent" style={{backgroundColor: "rgb(248,248,248)", color: "black", fontSize: 24, minHeight: "65vh"}}>
                 <Grid container justify="center">

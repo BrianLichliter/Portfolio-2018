@@ -1,23 +1,22 @@
-import { takeLatest, call, put, all } from "redux-saga/effects";
+import { takeLatest, call, put, all, select } from "redux-saga/effects";
 import firebase from '../firebase/firebase';
+import * as selectors from './selectors';
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
     yield all([
-        takeLatest("LOAD_PROJECTS_REQUEST", loadProjectsSaga)
+        takeLatest("LOAD_PROJECTS_REQUEST", loadProjectsSaga),
+        takeLatest("UPDATE_SELECTEDPROJECT", updateSelectedProjectSaga)
     ])
 }
 
 // function that makes the api request and returns a Promise for response
 function fetchProjects() {
-    console.log('running fetchprojects')
     return firebase.firestore().collection('projects').get();
 }
 
 // function that makes the file read request and returns a promise for response
 function fetchArticle(query) {
-    console.log('running fetcharticle')
-    console.log(query)
     return new Promise((resolve, reject) => {
         const url = query.data().articleURL;
         var xhr = new XMLHttpRequest();
@@ -39,7 +38,7 @@ function fetchArticle(query) {
 }
 
 // worker saga: makes the api call when watcher saga sees the action
-function* loadProjectsSaga() {
+function* loadProjectsSaga(action) {
   try {
     const querySnapshot = yield call(fetchProjects);
     const projects = yield all(
@@ -47,9 +46,21 @@ function* loadProjectsSaga() {
             (query) => call(fetchArticle, query)
         )
     )
-    const selectedProject = projects[0]
-        yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
-    } catch (error) {
-        yield put({ type: "LOAD_PROJECTS_FAILURE", error });
+    const selectedProject = projects.filter((project) => {return project.client === action['selectedClient']})[0];
+    yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
+} catch (error) {
+    yield put({ type: "LOAD_PROJECTS_FAILURE", error });
     }
+}
+
+function* updateSelectedProjectSaga(action) {
+    console.log('action');
+    console.log(action);
+    const projects = yield select(selectors.projects);
+    console.log('projects');
+    console.log(projects);
+    const selectedProject = projects.filter((project) => {return project.client === action['selectedClient']})[0];
+    console.log('selectedProject');
+    console.log(selectedProject);
+    yield put({ type: "UPDATE_SELECTEDPROJECT", selectedProject });
 }

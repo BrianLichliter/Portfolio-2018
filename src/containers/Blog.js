@@ -9,16 +9,12 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
 class Blog extends React.Component {
-    constructor(props) {
-        super(props)
-        this.props.loadProjects()
-        this.dispatchChangeSelectedProject = this.dispatchChangeSelectedProject.bind(this);
+    componentDidMount() {
+        const selectedClient = this.props.match.params['client'];
+        this.props.fetchProjects(selectedClient)
     }
-    
-    // function for allowing menubar to change the selected post
-    dispatchChangeSelectedProject(project) {
-        this.props.changeSelectedProject(project);
-    }
+
+    component
 
     render() { 
         const { projects, selectedProject } = this.props
@@ -26,7 +22,7 @@ class Blog extends React.Component {
         const fullList = (
             projects.map(project => {
                 return (
-                    <Post selectedProject={project} display={(selectedProject.client === project.client) ? "block" : "none"}/>
+                    <Post key={project.client} selectedProject={project} display={(selectedProject.client === project.client) ? "block" : "none"}/>
                 )        
             })
         );
@@ -36,15 +32,15 @@ class Blog extends React.Component {
                 <Grid container spacing={0}>
                     <Hidden smDown>
                         <Grid style={{zIndex:10}} item md={2}>
-                            <SideNav selectedProject={selectedProject} changeSelectedProject={this.dispatchChangeSelectedProject} projectList={projects}/>
+                            <SideNav selectedProject={selectedProject} projectList={projects}/>
                         </Grid>
                     </Hidden>
                     <Grid item md={10} sm={12}>
-                        {fullList}
+                        <Post key={project.client} selectedProject={project} display={(selectedProject.client === project.client) ? "block" : "none"}/>
                     </Grid>
                 </Grid>
                 <Hidden mdUp>
-                    <TemporaryDrawer selectedProject={selectedProject} changeSelectedProject={this.dispatchChangeSelectedProject} projectList={projects}/>
+                    <TemporaryDrawer selectedProject={selectedProject} projectList={projects}/>
                 </Hidden>
             </div>
         )
@@ -62,8 +58,8 @@ const mapStateToProps = state => {
   
 const mapDispatchToProps = dispatch => {
     return {
-        loadProjects: () => dispatch({ type: "LOAD_PROJECTS_REQUEST" }),
-        changeSelectedProject: (project) => dispatch({ type: "CHANGE_SELECTEDPROJECT", project: project})
+        fetchProjects: (client) => dispatch({ type: "LOAD_PROJECTS_REQUEST", selectedClient: client }),
+        updateSelectedProject: (client) => dispatch({ type: "UPDATE_SELECTEDPROJECT", selectedClient: client })    
     };
 };
 

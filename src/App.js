@@ -22,7 +22,7 @@ class App extends Component {
           <MuiThemeProvider theme={theme}>
             <MenuBar />
             <Route exact path="/" component={Homepage} />
-            <Route path="/projects" component={Blog} />
+            <Route path="/projects/:client" component={Blog} />
           </MuiThemeProvider>
         </div>
       </Router>

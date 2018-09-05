@@ -1,12 +1,10 @@
-import { takeLatest, call, put, all, select } from "redux-saga/effects";
+import { takeLatest, call, put, all } from "redux-saga/effects";
 import firebase from '../firebase/firebase';
-import * as selectors from './selectors';
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
     yield all([
-        takeLatest("LOAD_PROJECTS_REQUEST", loadProjectsSaga),
-        takeLatest("UPDATE_SELECTEDPROJECT", updateSelectedProjectSaga)
+        takeLatest("LOAD_PROJECTS_REQUEST", loadProjectsSaga)
     ])
 }
 
@@ -46,21 +44,8 @@ function* loadProjectsSaga(action) {
             (query) => call(fetchArticle, query)
         )
     )
-    const selectedProject = projects.filter((project) => {return project.client === action['selectedClient']})[0];
-    yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
+    yield put({ type: "LOAD_PROJECTS_SUCCESS", projects });
 } catch (error) {
     yield put({ type: "LOAD_PROJECTS_FAILURE", error });
     }
-}
-
-function* updateSelectedProjectSaga(action) {
-    console.log('action');
-    console.log(action);
-    const projects = yield select(selectors.projects);
-    console.log('projects');
-    console.log(projects);
-    const selectedProject = projects.filter((project) => {return project.client === action['selectedClient']})[0];
-    console.log('selectedProject');
-    console.log(selectedProject);
-    yield put({ type: "UPDATE_SELECTEDPROJECT", selectedProject });
 }

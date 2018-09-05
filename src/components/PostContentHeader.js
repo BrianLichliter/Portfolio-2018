@@ -20,7 +20,7 @@ const Header = styled.div`
     }
 `
 
-class PostHeader extends React.Component {
+class PostContentHeader extends React.Component {
     render() {
         return (
             <Header color={this.props.selectedProject.color}>
@@ -32,4 +32,4 @@ class PostHeader extends React.Component {
     }
 }
 
-export default PostHeader;
+export default PostContentHeader;

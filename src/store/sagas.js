@@ -10,14 +10,11 @@ export function* watcherSaga() {
 
 // function that makes the api request and returns a Promise for response
 function fetchProjects() {
-    console.log('running fetchprojects')
     return firebase.firestore().collection('projects').get();
 }
 
 // function that makes the file read request and returns a promise for response
 function fetchArticle(query) {
-    console.log('running fetcharticle')
-    console.log(query)
     return new Promise((resolve, reject) => {
         const url = query.data().articleURL;
         var xhr = new XMLHttpRequest();
@@ -39,7 +36,7 @@ function fetchArticle(query) {
 }
 
 // worker saga: makes the api call when watcher saga sees the action
-function* loadProjectsSaga() {
+function* loadProjectsSaga(action) {
   try {
     const querySnapshot = yield call(fetchProjects);
     const projects = yield all(
@@ -47,9 +44,8 @@ function* loadProjectsSaga() {
             (query) => call(fetchArticle, query)
         )
     )
-    const selectedProject = projects[0]
-        yield put({ type: "LOAD_PROJECTS_SUCCESS", projects, selectedProject });
-    } catch (error) {
-        yield put({ type: "LOAD_PROJECTS_FAILURE", error });
+    yield put({ type: "LOAD_PROJECTS_SUCCESS", projects });
+} catch (error) {
+    yield put({ type: "LOAD_PROJECTS_FAILURE", error });
     }
 }

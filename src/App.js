@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MenuBar from './components/MenuBar';
 import Post from './containers/Post';
+import Gallery from './containers/Gallery'
 import Homepage from './components/Homepage';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -22,6 +23,7 @@ class App extends Component {
           <MuiThemeProvider theme={theme}>
             <MenuBar />
             <Route exact path="/" component={Homepage} />
+            <Route exact path="/projects" component={Gallery} />
             <Route path="/projects/:client" component={Post} />
           </MuiThemeProvider>
         </div>

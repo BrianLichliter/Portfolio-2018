@@ -59,7 +59,7 @@ const mapStateToProps = state => {
   
 const mapDispatchToProps = dispatch => {
     return {
-        fetchProjects: (client) => dispatch({ type: "LOAD_PROJECTS_REQUEST" }),
+        fetchProjects: () => dispatch({ type: "LOAD_PROJECTS_REQUEST" }),
     };
 };
 

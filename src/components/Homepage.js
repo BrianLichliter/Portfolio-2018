@@ -69,14 +69,14 @@ class Homepage extends React.Component {
                         <BioParagraph>
                             Currently spending my time learning tennis and continuously starting side projects with new web technologies.
                         </BioParagraph>          
+                        <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="primary" size="large" style={{marginRight: 16}}>
+                            Resume
+                        </Button>
                         <Link style={{"color": "white", "textDecoration": "unset"}} to="/projects">
-                            <Button variant="contained" color="secondary" size="large" style={{marginRight: 16}}>
+                            <Button variant="contained" color="secondary" size="large">
                                 Projects
                             </Button>
                         </Link>
-                        <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="primary" size="large">
-                            Resume
-                        </Button>
                     </TextWrapper>
                 </Grid>            
             </AppWrapper>

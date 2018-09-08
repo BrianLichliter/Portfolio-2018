@@ -29,7 +29,7 @@ const ProjectCardText = styled(CardContent)`
     width: 100%;
     padding: 32px;
     background-color: rgba(0,0,0,.5);
-    transition: background-color .3s;
+    transition: background-color .15s;
     &:hover {
         background-color: rgba(0,0,0,.8);
     }

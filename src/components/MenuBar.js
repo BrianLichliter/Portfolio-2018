@@ -24,7 +24,9 @@ function MenuBar(props) {
       <AppBar color="secondary" position="fixed">
         <Toolbar variant="dense">
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Brian Lichliter
+            <Link style={{"color": "white", "textDecoration": "unset"}} to="/">
+              Brian Lichliter
+            </Link>
           </Typography>
           <Link style={{"color": "white", "textDecoration": "unset"}} to="/">
             <Button color="inherit">

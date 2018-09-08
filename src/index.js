@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { unregister as unregisterServiceWorker } from './registerServiceWorker'
 
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
@@ -33,4 +33,4 @@ ReactDOM.render(
     </Provider>, 
     document.getElementById('root')
 );
-registerServiceWorker();
+unregisterServiceWorker();

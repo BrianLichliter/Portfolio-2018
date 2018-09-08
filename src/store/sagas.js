@@ -44,6 +44,9 @@ function* loadProjectsSaga(action) {
             (query) => call(fetchArticle, query)
         )
     )
+    projects.sort((a, b) => {
+        return a.order > b.order
+    })
     yield put({ type: "LOAD_PROJECTS_SUCCESS", projects });
 } catch (error) {
     yield put({ type: "LOAD_PROJECTS_FAILURE", error });

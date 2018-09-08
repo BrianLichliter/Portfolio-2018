@@ -11,6 +11,6 @@ The problem Parts Source had identified was that a simple and easy experience wa
 
 There were a number of goals I was tasked with during the sprint including: understand and document the business logic that existed along the common purchasing path for key individuals within a hospital, evaluate and scan experiences, patterns, and interactions being utilizied by compeititors, and create proof of concept prototypes that demonstrated that a simpler experience did not necessarily mean abadoning the complex business logic.
 
-![](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/Parts%20Source%2Fparts%20source-2.jpg?alt=media&token=a928d863-4e65-479d-ad6d-46c2fc4f099c)
+![](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/Parts%20Source%2FHomepage.png?alt=media&token=68b41a94-4d67-4caf-84e4-9ec61638b7cd)
 
 During the sprint I faciliated design exercises, crafted artifacts detailing the market, and created and presented prototypes demonstrating what the future of Parts Source could look like.

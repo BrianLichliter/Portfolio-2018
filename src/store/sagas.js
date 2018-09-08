@@ -10,16 +10,19 @@ export function* watcherSaga() {
 
 // function that makes the api request and returns a Promise for response
 function fetchProjects() {
-    return firebase.firestore().collection('projects').get();
+    const firestore = firebase.firestore();
+    const settings = {timestampsInSnapshots: true};
+    firestore.settings(settings);
+    return firestore.collection('projects').get();
 }
 
 // function that makes the file read request and returns a promise for response
 function fetchArticle(query) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const url = query.data().articleURL;
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
-        xhr.onload = (event) => {
+        xhr.onload = () => {
             const reader = new FileReader();
             // This fires after the blob has been read/loaded.
             reader.addEventListener('loadend', (e) => {
@@ -36,7 +39,7 @@ function fetchArticle(query) {
 }
 
 // worker saga: makes the api call when watcher saga sees the action
-function* loadProjectsSaga(action) {
+function* loadProjectsSaga() {
   try {
     const querySnapshot = yield call(fetchProjects);
     const projects = yield all(

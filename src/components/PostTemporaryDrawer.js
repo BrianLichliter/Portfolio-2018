@@ -51,7 +51,7 @@ class PostTemporaryDrawer extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.toggleDrawer('bottom', true)} style={{position: "fixed", right: 16, bottom: 16}} variant="extendedFab" color="secondary" size="large" npmaria-label="Add" className={classes.button}>
+        <Button onClick={this.toggleDrawer('bottom', true)} style={{position: "fixed", right: 16, bottom: 16}} variant="extendedFab" color="primary" size="large" npmaria-label="Add" className={classes.button}>
             <ListIcon />
             &nbsp; Projects
         </Button>

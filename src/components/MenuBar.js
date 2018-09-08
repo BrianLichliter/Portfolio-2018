@@ -21,7 +21,7 @@ function MenuBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root} style={{marginBottom: 48}}>
-      <AppBar color="primary" position="fixed">
+      <AppBar color="secondary" position="fixed">
         <Toolbar variant="dense">
           <Typography variant="title" color="inherit" className={classes.flex}>
             Brian Lichliter

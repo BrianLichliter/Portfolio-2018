@@ -61,7 +61,7 @@ class Homepage extends React.Component {
                             Hello.
                         </Hello>
                         <BioParagraph>
-                            My name is Brian Lichliter and I am an experience designer currently working at <a rel="noopener noreferrer" target="_blank" style={{"textDecoration": "none", "color": "#f50057"}} href="http://www.drawn.com">Drawn</a>, a strategy and design firm. Previous intern at Visa and Motorola.
+                            My name is Brian Lichliter and I am an experience designer currently working at <a rel="noopener noreferrer" target="_blank" style={{"textDecoration": "none", "color": "rgb(54,91,151)", 'fontWeight': 'bold'}} href="http://www.drawn.com">Drawn</a>, a strategy and design firm. Previous intern at Visa and Motorola.
                         </BioParagraph>
                         <BioParagraph>
                             I have a passion for bringing user needs to the forefront of any and every endeavor. Having worked at various levels of abstraction in computing, technology, and design, I enjoy tackling problems both board and narrow in scope.
@@ -69,14 +69,14 @@ class Homepage extends React.Component {
                         <BioParagraph>
                             Currently spending my time learning tennis and continuously starting side projects with new web technologies.
                         </BioParagraph>          
-                        <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="primary" size="large" style={{marginRight: 16}}>
-                            Resume
-                        </Button>
-                        <Link style={{"color": "white", "textDecoration": "unset"}} to="/projects">
-                            <Button variant="contained" color="secondary" size="large">
+                        <Link style={{"color": "white", "textDecoration": "unset", 'marginRight': 16}} to="/projects">
+                            <Button variant="contained" color="primary" size="large">
                                 Projects
                             </Button>
                         </Link>
+                        <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="secondary" size="large">
+                            Resume
+                        </Button>
                     </TextWrapper>
                 </Grid>            
             </AppWrapper>

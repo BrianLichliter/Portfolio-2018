@@ -15,6 +15,9 @@ class Post extends React.Component {
 
     render() { 
         const { projects } = this.props
+        const cardHeight = 280
+        const cardFontSize = 36
+        const cardPadding = cardHeight / 2 - cardFontSize
         const fullList = (
             projects.map(project => {
                 return (
@@ -22,16 +25,16 @@ class Post extends React.Component {
                         <Link to={"/projects/" + project.client} style={{"textDecoration": "none"}} key={project.client}>
                             <Card>
                                 <CardActionArea style={{'width': '100%'}}>
-                                    <CardMedia
-                                    image={project.imageURL}
-                                    title={project.client}
-                                    style={{'height': 280, 'backgroundSize': '70%', 'backgroundColor': project.color}}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="headline" component="h2">
+                                    <CardContent style={{'position': 'absolute', 'width': '100%', 'height': '100%', 'backgroundColor': 'rgba(0,0,0,.6)', 'padding': 0 }}>
+                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'paddingTop': cardPadding, 'color': 'white', 'fontSize': cardFontSize, 'fontWeight': 300}}>
                                             {project.client}
                                         </Typography>
                                     </CardContent>
+                                    <CardMedia
+                                    image={project.imageURL}
+                                    title={project.client}
+                                    style={{'height': cardHeight, 'backgroundSize': '70%', 'backgroundColor': project.color}}
+                                    />
                                 </CardActionArea>
                             </Card>
                         </Link>
@@ -42,7 +45,7 @@ class Post extends React.Component {
 
         return (
             <div className="gallery" style={{padding: 16}}>
-                <h1 style={{'marginTop': 0, 'fontSize': 48}}>Projects</h1>
+                <h2 style={{'marginTop': 0, 'fontSize': 32}}>Projects</h2>
                 <Grid container spacing={16}>
                     {fullList}
                 </Grid>

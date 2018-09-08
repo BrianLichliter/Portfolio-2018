@@ -17,23 +17,25 @@ class Post extends React.Component {
         const { projects } = this.props
         const cardHeight = 280
         const cardFontSize = 36
-        const cardPadding = cardHeight / 2 - cardFontSize
         const fullList = (
             projects.map(project => {
                 return (
-                    <Grid item xs="12" sm="6" md="4">
+                    <Grid item xs="12" md="6" xl="4">
                         <Link to={"/projects/" + project.client} style={{"textDecoration": "none"}} key={project.client}>
                             <Card>
-                                <CardActionArea style={{'width': '100%'}}>
-                                    <CardContent style={{'position': 'absolute', 'width': '100%', 'height': '100%', 'backgroundColor': 'rgba(0,0,0,.6)', 'padding': 0 }}>
-                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'paddingTop': cardPadding, 'color': 'white', 'fontSize': cardFontSize, 'fontWeight': 300}}>
+                                <CardActionArea style={{'width': '100%', 'display': 'flex'}}>
+                                    <CardContent style={{'position': 'absolute', 'display': 'flex', 'flexDirection': 'column', 'justifyContent': 'center', 'alignItems': 'center', 'height': '100%', 'width': '100%', 'backgroundColor': 'rgba(0,0,0,.5)', 'padding': 32 }}>
+                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'color': 'white', 'fontSize': cardFontSize, 'width': '90%'}}>
                                             {project.client}
+                                        </Typography>
+                                        <Typography gutterBottom style={{'textAlign': 'center', 'color': 'white', 'width': '90%'}}>
+                                            {project.tags.join(' | ')}
                                         </Typography>
                                     </CardContent>
                                     <CardMedia
                                     image={project.imageURL}
                                     title={project.client}
-                                    style={{'height': cardHeight, 'backgroundSize': '70%', 'backgroundColor': project.color}}
+                                    style={{'height': cardHeight, 'width': '100%', 'backgroundSize': '70%', 'backgroundColor': project.color}}
                                     />
                                 </CardActionArea>
                             </Card>
@@ -45,7 +47,6 @@ class Post extends React.Component {
 
         return (
             <div className="gallery" style={{padding: 16}}>
-                <h2 style={{'marginTop': 0, 'fontSize': 32}}>Projects</h2>
                 <Grid container spacing={16}>
                     {fullList}
                 </Grid>

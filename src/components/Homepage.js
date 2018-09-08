@@ -16,7 +16,7 @@ const AppWrapper = styled.div`
 `
 
 const TextWrapper = styled(Grid)`
-    padding: 16px;
+    padding: 32px;
 `
 
 const Hello = styled.h1`
@@ -71,11 +71,11 @@ class Homepage extends React.Component {
                         </BioParagraph>          
                         <Link style={{"color": "white", "textDecoration": "unset", 'marginRight': 16}} to="/projects">
                             <Button variant="contained" color="primary" size="large">
-                                Projects
+                                PROJECTS
                             </Button>
                         </Link>
                         <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="secondary" size="large">
-                            Resume
+                            RÉSUMÉ
                         </Button>
                     </TextWrapper>
                 </Grid>            

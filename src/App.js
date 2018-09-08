@@ -5,6 +5,7 @@ import Gallery from './containers/Gallery'
 import Homepage from './components/Homepage';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import GA from './utils/GoogleAnalytics'
 
 
 const theme = createMuiTheme({
@@ -23,6 +24,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          { GA.init() && <GA.RouteTracker /> }  
           <MuiThemeProvider theme={theme}>
             <MenuBar />
             <Route exact path="/" component={Homepage} />

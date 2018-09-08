@@ -76,7 +76,7 @@ class Homepage extends React.Component {
                                 PROJECTS
                             </Button>
                         </Link>
-                        <Button rel="noopener noreferrer" href="https://www.dropbox.com/s/h0wr0nf6b2x0jcx/BrianLichliter_Resume.pdf?dl=0" target="_blank" variant="contained" color="secondary" size="large">
+                        <Button rel="noopener noreferrer" href="https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/BrianLichliter_Resume.pdf?alt=media&token=b8e5f759-3708-4837-96c4-c1253ae02fd1" target="_blank" variant="contained" color="secondary" size="large">
                             RÉSUMÉ
                         </Button>
                     </TextWrapper>

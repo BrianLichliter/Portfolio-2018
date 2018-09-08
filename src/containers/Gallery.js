@@ -7,7 +7,34 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components';
 
+const ProjectCardImage = styled(CardMedia)`
+    height: 280px;
+    width: 100%;
+    background-size: 70% !important;
+    background-color: ${props => props.color};
+    @media (min-width: 960px) {
+        min-height: 46vh;
+    }
+`
+
+const ProjectCardText = styled(CardContent)`
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+    width: 100%;
+    padding: 32px;
+    background-color: rgba(0,0,0,.5);
+    transition: background-color .3s;
+    &:hover {
+        background-color: rgba(0,0,0,.8);
+    }
+
+`
 class Post extends React.Component {
     componentDidMount() {
         this.props.fetchProjects();
@@ -15,8 +42,6 @@ class Post extends React.Component {
 
     render() { 
         const { projects } = this.props
-        const cardHeight = 280
-        const cardFontSize = 36
         const fullList = (
             projects.map(project => {
                 return (
@@ -24,18 +49,18 @@ class Post extends React.Component {
                         <Link to={"/projects/" + project.client} style={{"textDecoration": "none"}} key={project.client}>
                             <Card>
                                 <CardActionArea style={{'width': '100%', 'display': 'flex'}}>
-                                    <CardContent style={{'position': 'absolute', 'display': 'flex', 'flexDirection': 'column', 'justifyContent': 'center', 'alignItems': 'center', 'height': '100%', 'width': '100%', 'backgroundColor': 'rgba(0,0,0,.5)', 'padding': 32 }}>
-                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'color': 'white', 'fontSize': cardFontSize, 'width': '90%'}}>
+                                    <ProjectCardText>
+                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'color': 'white', 'fontSize': 36, 'width': '90%'}}>
                                             {project.client}
                                         </Typography>
                                         <Typography gutterBottom style={{'textAlign': 'center', 'color': 'white', 'width': '90%'}}>
                                             {project.tags.join(' | ')}
                                         </Typography>
-                                    </CardContent>
-                                    <CardMedia
+                                    </ProjectCardText>
+                                    <ProjectCardImage
                                     image={project.imageURL}
                                     title={project.client}
-                                    style={{'height': cardHeight, 'width': '100%', 'backgroundSize': '70%', 'backgroundColor': project.color}}
+                                    color={project.color}
                                     />
                                 </CardActionArea>
                             </Card>

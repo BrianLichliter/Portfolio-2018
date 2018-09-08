@@ -4,9 +4,11 @@ import PostContentBody from './PostContentBody';
 import styled from 'styled-components';
 
 const StyledPost = styled.div`
-    overflow-y: scroll;
+    @media (min-width: 960px) {
+        overflow-y: scroll;
+        max-height: calc(100vh - 48px);
+    }
     -webkit-overflow-scrolling: touch;
-    max-height: calc(100vh - 48px);
     z-index: -1;
 `
 

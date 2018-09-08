@@ -15,8 +15,9 @@ const AppWrapper = styled.div`
     max-width: 100vw;
 `
 
-const TextWrapper = styled(Grid)`
+const TextWrapper = styled.div`
     padding: 32px;
+    max-width: 720px;
 `
 
 const Hello = styled.h1`
@@ -56,7 +57,8 @@ class Homepage extends React.Component {
                 <Grid container spacing={0} alignItems="stretch" style={{minHeight: "calc(100vh - 48px)"}}>
                     <ProfileImage item sm={12} md={5}>
                     </ProfileImage>
-                    <TextWrapper item sm={12} md={7}>
+                    <Grid item sm={12} md={7} style={{'display':'flex', 'alignItems': 'center', 'justifyContent':'center'}}>
+                    <TextWrapper>
                         <Hello>
                             Hello.
                         </Hello>
@@ -78,6 +80,7 @@ class Homepage extends React.Component {
                             RÉSUMÉ
                         </Button>
                     </TextWrapper>
+                    </Grid>
                 </Grid>            
             </AppWrapper>
         )

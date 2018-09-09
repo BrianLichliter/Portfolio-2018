@@ -29,11 +29,15 @@ const ProjectCardText = styled(CardContent)`
     width: 100%;
     padding: 32px;
     background-color: rgba(0,0,0,.5);
-    transition: background-color .15s;
-    &:hover {
-        background-color: rgba(0,0,0,.8);
+    @media (min-width: 1920px) {
+        font-size: 16px;
     }
-
+    @media (min-width: 960px) {
+        transition: background-color .15s;
+        &:hover {
+            background-color: rgba(0,0,0,.8);
+        }
+    }
 `
 class Post extends React.Component {
     componentDidMount() {
@@ -50,10 +54,10 @@ class Post extends React.Component {
                             <Card>
                                 <CardActionArea style={{'width': '100%', 'display': 'flex'}}>
                                     <ProjectCardText>
-                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'color': 'white', 'fontSize': 36, 'width': '90%'}}>
+                                        <Typography gutterBottom variant="headline" component="h2" style={{'textAlign': 'center', 'color': 'white', 'fontSize': '3em', 'width': '90%'}}>
                                             {project.client}
                                         </Typography>
-                                        <Typography gutterBottom style={{'textAlign': 'center', 'color': 'white', 'width': '90%'}}>
+                                        <Typography gutterBottom style={{'textAlign': 'center', 'color': 'white', 'width': '90%', 'fontSize': '1.2em'}}>
                                             {project.tags.join(' | ')}
                                         </Typography>
                                     </ProjectCardText>

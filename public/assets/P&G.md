@@ -9,7 +9,7 @@ During the spring of 2015, our studio partnered up with various stakeholders wit
 
 ![We used a variety of services to understand what made them successful](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/P%26G%2Fp%26g1.png?alt=media&token=fc7612c8-85a2-4093-8ee8-07fd1e608ec5)
 
-Once we understood the market, we then researched our target consumers and stakeholders to begin gathering requirements and understand key insights and themes in the research. Using this research, we brainstormed a variety of solutions ranging the gamut of small to big to simple to crazy. Following the brainstorm we progressed forward using the mantra build, measure, learn to understand the benefits and painpoints with our ideas and to continue iterating throughout the process.
+Once we understood the market, we then researched our target consumers and stakeholders to begin gathering requirements and understand key insights and themes in the research. Using this research, we brainstormed a variety of solutions ranging the gamut of small to big to simple to crazy. Following the brainstorm we progressed forward using the mantra build, measure, learn to understand the benefits and painpoints with our ideas and to continue iterating throughout the process.
 
 ![Testing the experience of one of our service ideas with a potential user](https://firebasestorage.googleapis.com/v0/b/brianlichliter-2018.appspot.com/o/P%26G%2Fp%26g2.png?alt=media&token=aa21eef9-91b6-46bb-b207-a2e7f921e877)
 

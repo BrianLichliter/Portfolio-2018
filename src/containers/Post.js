@@ -33,11 +33,11 @@ class Post extends React.Component {
             <div className="blog">
                 <Grid container spacing={0}>
                     <Hidden smDown>
-                        <Grid style={{zIndex:10}} item md={2}>
+                        <Grid style={{zIndex:10}} item md={2} xl={1}>
                             <PostSideNav selectedProject={selectedProject} projectList={projects}/>
                         </Grid>
                     </Hidden>
-                    <Grid item md={10} sm={12}>
+                    <Grid item sm={12} md={10} xl={11}>
                         {fullList}
                     </Grid>
                 </Grid>

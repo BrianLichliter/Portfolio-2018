@@ -11,11 +11,6 @@ import Hidden from '@material-ui/core/Hidden';
 class Post extends React.Component {
     componentDidMount() {
         this.props.fetchProjects();
-        window.scrollTo(0,0);
-    }
-
-    componentDidUpdate(prevProps) {
-        
     }
 
     findProjectFromClient(selectedClient) {

@@ -42,7 +42,6 @@ const ProjectCardText = styled(CardContent)`
 class Post extends React.Component {
     componentDidMount() {
         this.props.fetchProjects();
-        window.scrollTo(0,0);
     }
 
     render() { 

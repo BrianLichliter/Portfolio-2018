@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import GA from './utils/GoogleAnalytics'
+import ScrollToTop from './components/ScrollToTop';
 
 
 const theme = createMuiTheme({
@@ -23,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop>
         <div className="app">
           { GA.init() && <GA.RouteTracker /> }  
           <MuiThemeProvider theme={theme}>
@@ -32,6 +34,7 @@ class App extends Component {
             <Route path="/projects/:client" component={Post} />
           </MuiThemeProvider>
         </div>
+        </ScrollToTop>
       </Router>
     );
   }

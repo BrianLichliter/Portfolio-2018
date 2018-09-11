@@ -15,7 +15,6 @@ const StyledPost = styled.div`
 class PostContent extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.display !== prevProps.display) {
-            window.scrollTo(0, 0);
             document.getElementById(this.props.selectedProject.client).scrollTo(0, 0);
         }
     }

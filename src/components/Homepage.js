@@ -76,7 +76,7 @@ class Homepage extends React.Component {
                             I have a passion for bringing user needs to the forefront of any and every endeavor. Having worked at various levels of abstraction in computing, technology, and design, I enjoy tackling problems both narrow and broad in scope.
                         </BioParagraph>
                         <BioParagraph>
-                            Currently spending my time learning tennis and continuously starting side projects with new web technologies <StyledA rel="noopener noreferrer" target="_blank" href="https://github.com/BrianLichliter/Portfolio-2018">like this one</StyledA>!
+                            Currently spending my time learning tennis and continuously starting side projects with new web technologies <StyledA rel="noopener noreferrer" target="_blank" href="https://github.com/BrianLichliter/Portfolio-2018">like this portfolio</StyledA>!
                         </BioParagraph>          
                         <Link style={{"color": "white", "textDecoration": "unset", 'marginRight': 16}} to="/projects">
                             <Button variant="contained" color="primary" size="large">

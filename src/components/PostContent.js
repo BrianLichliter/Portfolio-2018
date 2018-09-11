@@ -13,9 +13,16 @@ const StyledPost = styled.div`
 `
 
 class PostContent extends React.Component {
+    componentDidUpdate(prevProps) {
+        if (this.props.display !== prevProps.display) {
+            window.scrollTo(0, 0);
+            document.getElementById(this.props.selectedProject.client).scrollTo(0, 0);
+        }
+    }
+
     render() {        
         return ( 
-            <StyledPost className="Post" style={{display: this.props.display}}>
+            <StyledPost id={this.props.selectedProject.client} className="Post" style={{display: this.props.display}}>
                 <PostContentHeader selectedProject={this.props.selectedProject}/>
                 <PostContentBody selectedProject={this.props.selectedProject}/>
             </StyledPost> 

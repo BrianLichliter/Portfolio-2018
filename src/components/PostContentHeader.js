@@ -10,7 +10,7 @@ const Header = styled.div`
     color: white;
 
     @media screen and (max-width: 400px) {
-        max-height: 35vh;
+        max-height: 45vh;
     }
 
     img {

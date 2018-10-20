@@ -49,7 +49,7 @@ class Post extends React.Component {
         const fullList = (
             projects.map(project => {
                 return (
-                    <Grid item xs="12" md="6" xl="4">
+                    <Grid key={project.client} item xs={12} md={6} xl={4}>
                         <Link to={"/projects/" + project.client} style={{"textDecoration": "none"}} key={project.client}>
                             <Card>
                                 <CardActionArea style={{'width': '100%', 'display': 'flex'}}>

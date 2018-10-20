@@ -42,13 +42,13 @@ function fetchArticle(query) {
 function* loadProjectsSaga() {
   try {
     const querySnapshot = yield call(fetchProjects);
-    const projects = yield all(
+    var projects = yield all(
         querySnapshot.docs.map(
             (query) => call(fetchArticle, query)
         )
     )
-    projects.sort((a, b) => {
-        return a.order > b.order
+    projects = projects.sort((a, b) => {
+        return (a.order - b.order);
     })
     yield put({ type: "LOAD_PROJECTS_SUCCESS", projects });
 } catch (error) {

@@ -62,15 +62,14 @@ class Homepage extends React.Component {
         return (
             <AppWrapper>
                 <Grid container spacing={0} alignItems="stretch" style={{minHeight: "calc(100vh - 48px)"}}>
-                    <ProfileImage item sm={12} md={5}>
-                    </ProfileImage>
+                    <ProfileImage item sm={12} md={5} />
                     <Grid item sm={12} md={7} style={{'display':'flex', 'alignItems': 'center', 'justifyContent':'center'}}>
                     <TextWrapper>
                         <Hello>
                             Hello.
                         </Hello>
                         <BioParagraph>
-                            My name is Brian Lichliter and I am an experience designer currently working at <StyledA rel="noopener noreferrer" target="_blank" href="http://www.drawn.com">Drawn</StyledA>, a strategy and design firm. Previously interned at Visa and Motorola Mobility.
+                            My name is Brian Lichliter and I am an experience designer at <StyledA rel="noopener noreferrer" target="_blank" href="http://www.drawn.com">Drawn</StyledA>, a strategy and design firm. Previously interned at Visa and Motorola Mobility.
                         </BioParagraph>
                         <BioParagraph>
                             I have a passion for bringing user needs to the forefront of any and every endeavor. Having worked at various levels of abstraction in computing, technology, and design, I enjoy tackling problems both narrow and broad in scope.

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Header = styled.div`
     min-height: 200px;
     height: 60vh;
-    max-height: 500px;
     background-color: ${props => props.color};
     color: white;
 
